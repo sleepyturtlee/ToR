@@ -1,0 +1,29 @@
+.btns {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    padding: 6 px, 12px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+
+}
+.btn {
+    /* rounded corners */
+    border: none;
+    border-radius: 4px;
+    /* text */
+    color: white;
+    /* spacing */
+    margin-bottom: 1rem;
+    /* color change - setup */
+    background-image: linear-gradient(to right, hotpink 50%, darkviolet 50%);
+    background-size: 200%;
+    transition: 0.4s ease-out;
+}
+/* slide left/right hover */
+.btn:hover {
+    background-position: right;
+}
