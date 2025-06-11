@@ -1,29 +1,203 @@
-.btns {
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    padding: 6 px, 12px;
-    margin-bottom: 0px;
-    font-size: 18px;
-    font-weight: normal;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', sans-serif;
+}
+
+main {
+    padding: 4rem 2rem;
+}
+h1 {
     text-align: center;
-    cursor: pointer;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+.btns {
+    /* need to define height to align buttons vertically */
+    height: 60vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
 
 }
 .btn {
-    /* rounded corners */
+    appearance: none;
     border: none;
-    border-radius: 4px;
-    /* text */
+    outline: none;
+    background: none;
+    cursor: pointer;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: hotpink;
     color: white;
-    /* spacing */
-    margin-bottom: 1rem;
-    /* color change - setup */
-    background-image: linear-gradient(to right, hotpink 50%, darkviolet 50%);
-    background-size: 200%;
+    margin-bottom: 2rem;
+}
+
+/* bubble button */
+#coolbtn {
+    position: relative;
+    overflow: hidden;
+}
+
+#coolbtn span {
+    position: relative;
+    z-index: 2;
+}
+
+#coolbtn:after {
+    /* needed for pseudo element so that theres smth to refer to */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: 0;
+    height: 0;
+    background-color: darkviolet;
+    /* dont use 50% it'll look weird, less smooth edges*/
+    border-radius: 999px;
+    transition: 0.8s ease-out;
+}
+
+#coolbtn:hover:after {
+    width: 200%;
+    padding-top: 200%;
+}
+
+/* border button */
+#coolerbtn {
+    position: relative;
+    background-color: transparent;
+    color: lightslategray;
+    border: 3px solid lightslategray;
     transition: 0.4s ease-out;
 }
-/* slide left/right hover */
-.btn:hover {
-    background-position: right;
+
+#coolerbtn span {
+    position: relative;
+    z-index: 2;
+}
+
+#coolerbtn:after {
+    /* needed for pseudo element so that theres smth to refer to */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: calc(100% + 2rem);
+    height: calc(100% + 2rem);
+    /* dont use 50% it'll look weird, less smooth edges*/
+    border-radius: 0.5rem;
+    border: 3px solid lightslategray;
+    opacity: 0;
+    transition: 0.4s ease-out;
+}
+
+#coolerbtn:hover {
+    color: hotpink;
+    border-color: transparent;
+}
+
+#coolerbtn:hover:after {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    border-color: hotpink;
+}
+
+/* bubble border button (bub(ble) bor(der)) */
+.bubborbtn:before {
+    /* needed for pseudo element so that theres smth to refer to */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: 0;
+    height: 0;
+    background-color: rgb(255, 194, 225);
+    /* dont use 50% it'll look weird, less smooth edges*/
+    border-radius: 999px;
+    transition: 0.4s ease-out;
+}
+
+.bubborbtn {
+    position: relative;
+    background-color: rgba(66, 107, 146, 0.5);
+    color: rgb(204, 230, 255);
+    border: 3px solid rgb(204, 230, 255);
+    transition: 0.4s ease-out;
+}
+
+.bubborbtn span {
+    position: relative;
+    z-index: 2;
+}
+
+.bubborbtn:after {
+    /* needed for pseudo element so that theres smth to refer to */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: calc(100% + 2rem);
+    height: calc(100% + 2rem);
+    /* dont use 50% it'll look weird, less smooth edges*/
+    border-radius: 0.5rem;
+    border: 3px solid rgb(204, 230, 255);
+    opacity: 0;
+    transition: 0.4s ease-out;
+}
+
+.bubborbtn:hover {
+    color: white;
+    border-color: transparent;
+}
+
+.bubborbtn:hover:after {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    border-color: rgb(255, 194, 225);
+}
+
+.bubborbtn:hover:before {
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 0.5rem;
+}
+
+#whiteblossomsbg {
+    /* add the white blossoms img */
+    background-image: url(images/whiteblossoms.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* add tint */
+    background-color: rgba(125, 116, 120, 0.8);
+    background-blend-mode: multiply;
+}
+
+.playlist {
+    margin-top:-50%;
+    /* height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
 }
