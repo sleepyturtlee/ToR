@@ -1,45 +1,59 @@
-<body>
-    <h1>
-        Bucket List Adventures =)
-    </h1>
-    <!--diff between id and name? id is
-     used for the label so that the label
-     can refer to the correct checkbox...-->
-     <!-- go to japan -->
-    <input type="checkbox" id="i1" name="i1" value="traveljp">
-    <label for="i1">Travel to Japan</label>
-    <br>
-
-    <!-- go get ice cream together -->
-    <input type="checkbox" id="i2" name="i2" value="eaticecream">
-    <label for="i2">Eat ice cream</label>
-    <br>
-
-    <!-- listen to music together through the same headphones -->
-    <input type="checkbox" id="i3" name="i3" value="musictogether">
-    <label for="i3">Listen to music through the same headphones</label>
-    <br>
-
-    <!-- vlog a trip together -->
-    <input type="checkbox" id="i4" name="i4" value="vlog">
-    <label for="i4">Vlog a trip together</label>
-    <br>
-
-    <!-- Go on a dinner date -->
-    <input type="checkbox" id="i5" name="i5" value="dinner">
-    <label for="i5">Dress up and eat dinner :)</label>
-    <br>
-
-    <!-- Go to Ueno zoo in Tokyo (or San Diego zoo) -->
-    <input type="checkbox" id="i6" name="i6" value="tokyozoo">
-    <label for="i6">Go to Ueno Zoo in Tokyo !!</label>
-    <br>
-
-    <!-- Do arts and crafts together -->
-    <input type="checkbox" id="i7" name="i7" value="crafts">
-    <label for="i7">Do some arts and crafts together</label>
-    <br>
-   
-   
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucket List!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body id="cherryblossomsbg">
+    <main>
+        <h1>
+            Bucket List Adventures =)
+        </h1>
+        <!--diff between id and name? id is
+         used for the label so that the label
+         can refer to the correct checkbox...used for css and js purposes.
+         name: used when submitting form data to servers
+         so that name:value (key-value) pairs are possible (also for css attribute selectors)-->
+       <!-- testing stuff !!!!!!!!!!-->
+        <div class="checkboxes">
+            <!--
+            note that spans are required so css treats the 
+            different bullet points as whole, not as separate 
+            elements of checkmark and label. example note: 
+            [ ] label here 
+            versus...
+            [ ]
+            label here
+            -->
+            <!-- standard naming conventions for id, name, and value
+             id = camelCase
+             name = snake_case
+             value = simple stuff like male, yes, premium (1 word machine-readable and clear)-->
+            <span>
+                <input type="checkbox" id="toJapan" name="to_japan" value="japan">
+                <label for="toJapan">Travel to Japan!</label>
+            </span>
+            <span>
+                <input type="checkbox" id="watchGodzilla" name="watch_godzilla" value="godzilla">
+                <label for="watchGodzilla">Watch a godzilla movie</label>
+            </span>
+            <span>
+                <input type="checkbox" id="vlogTrip" name="vlog_trip" value="vlog">
+                <label for="vlogTrip">Vlog a trip together</label>
+            </span>
+            <span>
+                <input type="checkbox" id="watchStars" name="watch_stars" value="stars">
+                <label for="watchStars">Watch the stars</label>
+            </span>
+            <span>
+            <input type="checkbox" id="goZoo" name="go_zoo" value="zoo">
+            <label for="goZoo">Go to the zoo! (Tokyo or San Diego)</label>
+            </span>
+        </div>
+    </main>
 </body>
+</html>

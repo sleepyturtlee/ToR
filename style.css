@@ -14,6 +14,33 @@ h1 {
     margin-bottom: 2rem;
     color: white;
 }
+
+/*---------- backgrounds ----------*/
+#whiteblossomsbg {
+    /* add the white blossoms img */
+    background-image: url(images/whiteblossoms.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* add tint */
+    background-color: rgba(125, 116, 120, 0.8);
+    background-blend-mode: multiply;
+}
+
+#cherryblossomsbg {
+    /* add cherry blossoms img */
+    background-image: url(images/cherryblossoms.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* add tint */
+    background-color: rgba(125, 116, 120, 0.8);
+    background-blend-mode: multiply;
+}
+
+/* end of background styling */
+
+/*---------- button styling----------*/
 .btns {
     /* need to define height to align buttons vertically */
     height: 60vh;
@@ -43,82 +70,7 @@ h1 {
     margin-bottom: 2rem;
 }
 
-/* bubble button */
-#coolbtn {
-    position: relative;
-    overflow: hidden;
-}
-
-#coolbtn span {
-    position: relative;
-    z-index: 2;
-}
-
-#coolbtn:after {
-    /* needed for pseudo element so that theres smth to refer to */
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    width: 0;
-    height: 0;
-    background-color: darkviolet;
-    /* dont use 50% it'll look weird, less smooth edges*/
-    border-radius: 999px;
-    transition: 0.8s ease-out;
-}
-
-#coolbtn:hover:after {
-    width: 200%;
-    padding-top: 200%;
-}
-
-/* border button */
-#coolerbtn {
-    position: relative;
-    background-color: transparent;
-    color: lightslategray;
-    border: 3px solid lightslategray;
-    transition: 0.4s ease-out;
-}
-
-#coolerbtn span {
-    position: relative;
-    z-index: 2;
-}
-
-#coolerbtn:after {
-    /* needed for pseudo element so that theres smth to refer to */
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-    width: calc(100% + 2rem);
-    height: calc(100% + 2rem);
-    /* dont use 50% it'll look weird, less smooth edges*/
-    border-radius: 0.5rem;
-    border: 3px solid lightslategray;
-    opacity: 0;
-    transition: 0.4s ease-out;
-}
-
-#coolerbtn:hover {
-    color: hotpink;
-    border-color: transparent;
-}
-
-#coolerbtn:hover:after {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    border-color: hotpink;
-}
-
-/* bubble border button (bub(ble) bor(der)) */
+/*---------- bubble border button (bub(ble) bor(der)) ----------*/
 .bubborbtn:before {
     /* needed for pseudo element so that theres smth to refer to */
     content: '';
@@ -158,7 +110,6 @@ h1 {
     z-index: 0;
     width: calc(100% + 2rem);
     height: calc(100% + 2rem);
-    /* dont use 50% it'll look weird, less smooth edges*/
     border-radius: 0.5rem;
     border: 3px solid rgb(204, 230, 255);
     opacity: 0;
@@ -183,21 +134,74 @@ h1 {
     border-radius: 0.5rem;
 }
 
-#whiteblossomsbg {
-    /* add the white blossoms img */
-    background-image: url(images/whiteblossoms.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    /* add tint */
-    background-color: rgba(125, 116, 120, 0.8);
-    background-blend-mode: multiply;
+/*---------- for checkbox ----------*/
+.checkboxes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.playlist {
-    margin-top:-50%;
-    /* height: 80vh;
+.checkboxes span {
     display: flex;
-    justify-content: center;
-    align-items: center; */
+    align-items: center;
+    padding: .5rem;
+}
+
+/* for the literal checkbox */
+input[type="checkbox"] {
+    /* can't style the default checkboxes. hide them and make ur own */
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    /* start of my own new checkboxes*/
+    background-color:rgb(204, 230, 255);
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    /* so that the label and checkbox are spaced nicely */
+    margin-right: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:hover {
+    background-color: rgb(147, 179, 208)
+}
+
+input[type="checkbox"]:checked {
+    background-color: rgb(255, 194, 225)
+}
+
+input[type="checkbox"]:checked:hover {
+    background-color: rgb(205, 159, 181)
+}
+
+/* for the actual checkmark */
+input[type="checkbox"]:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+    content: '\f00c';
+    /* controls checkmark size. in order to be proportionate/appropriate size,
+     * the font-size below must be <= size as the height/width you amde the checkbox*/
+    font-size: 20px;
+    color: white;
+    display: none;
+}
+
+/* for the actual checkmark */
+input[type="checkbox"]:checked:after {
+    display: block;
+    /* code below centeres checkmark after click*/
+    margin-left: 1px;
+}
+
+
+
+/* for the text next to the checkbox (label) */
+label {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
 }
